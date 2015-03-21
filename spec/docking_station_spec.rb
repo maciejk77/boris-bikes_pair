@@ -12,5 +12,8 @@ describe DockingStation do
   	bike = subject.release_bike
   	expect(bike).not_to be_broken
   end
-
+  it 'raises an error when full' do
+    subject.dock double :bike
+    expect { subject.dock double :bike }.to raise_error 'Station Full'
+  end
 end
