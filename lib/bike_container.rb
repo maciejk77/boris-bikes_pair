@@ -2,6 +2,10 @@ module BikeContainer
   
   DEFAULT_CAPACITY = 20
   
+  def bike_count
+    bikes.length
+  end
+
   def bikes
     @bikes ||= []
   end
@@ -34,4 +38,5 @@ module BikeContainer
   def empty?
     bikes.reject(&:broken?).length == 0
   end
+
 end
