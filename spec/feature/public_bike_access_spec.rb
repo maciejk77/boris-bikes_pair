@@ -15,7 +15,7 @@ let(:docking_station) { DockingStation.new}
   broken_bike = Bike.new
   broken_bike.break
   docking_station.dock broken_bike
-  expect { docking_station.release_bike }.to raise_error 'No Bike Available'
+    expect { (docking_station.release_bike).to raise_error 'No Bike Available' }
   end
 
   scenario 'docking station unable to release as none available' do
